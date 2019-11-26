@@ -4,7 +4,7 @@
  *
  * Download ekomi data
  *
- * @link      https://runkel.org
+ * @link      https://github.com/plusForta/craft-ekomi
  * @copyright Copyright (c) 2019 Marc Runkel
  */
 

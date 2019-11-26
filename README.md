@@ -18,7 +18,7 @@ To install the plugin, follow these instructions.
 
 2. Then tell Composer to load the plugin:
 
-        composer require mrunkel/ekomi
+        composer require plusforta/craft-ekomi
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for ekomi.
 
@@ -40,4 +40,4 @@ Some things to do, and ideas for potential features:
 
 * Release it
 
-Brought to you by [Marc Runkel](https://runkel.org)
+Brought to you by [plusForta,GmbH](https://github.com/plusForta/craft-ekomi)
