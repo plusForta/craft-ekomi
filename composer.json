@@ -1,0 +1,43 @@
+{
+    "name": "plusforta/ekomi",
+    "description": "Download ekomi data",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "ekomi"
+    ],
+    "support": {
+        "docs": "https://github.com/mrunkel/ekomi/blob/master/README.md",
+        "issues": "https://github.com/mrunkel/ekomi/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marc Runkel",
+            "homepage": "https://runkel.org"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "plusforta\\ekomi\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "ekomi",
+        "handle": "ekomi",
+        "hasCpSettings": true,
+        "hasCpSection": true,
+        "changelogUrl": "https://raw.githubusercontent.com/mrunkel/ekomi/master/CHANGELOG.md",
+        "components": {
+            "data": "plusforta\\ekomi\\services\\Data"
+        },
+        "class": "plusforta\\ekomi\\Ekomi"
+    }
+}

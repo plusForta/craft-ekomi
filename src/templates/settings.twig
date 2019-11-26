@@ -1,0 +1,26 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * ekomi plugin for Craft CMS 3.x
+ *
+ * ekomi Settings.twig
+ *
+ * @author    Marc Runkel
+ * @copyright Copyright (c) 2019 Marc Runkel
+ * @link      https://runkel.org
+ * @package   Ekomi
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("plusforta\\ekomi\\assetbundles\\ekomi\\EkomiAsset") %}
+
+{{ forms.textField({
+    label: 'Some Field',
+    instructions: 'Enter some setting here.',
+    id: 'someAttribute',
+    name: 'someAttribute',
+    value: settings['someAttribute']})
+}}

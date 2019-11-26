@@ -1,0 +1,46 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * ekomi plugin for Craft CMS 3.x
+ *
+ * ekomi index.twig
+ *
+ * @author    Marc Runkel
+ * @copyright Copyright (c) 2019 Marc Runkel
+ * @link      https://runkel.org
+ * @package   Ekomi
+ * @since     1.0.0
+ */
+#}
+
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("plusforta\\ekomi\\assetbundles\\ekomi\\EkomiAsset") %}
+{% do view.registerAssetBundle("plusforta\\ekomi\\assetbundles\\ekomicpsection\\EkomiCPSectionAsset") %}
+
+{# Link for the ? icon at the bottom of the page #}
+{% set docsUrl = "https://github.com/mrunkel/ekomi/blob/master/README.md" %}
+
+{# The title of this CP section #}
+{% set title = "ekomi" %}
+
+{# The URL to this plugin's base CP section #}
+{% set pluginCpUrl = url('ekomi') %}
+
+{# Get a URL to an image in our AssetBundle #}
+{% set iconUrl = view.getAssetManager().getPublishedUrl('@plusforta/ekomi/assetbundles/ekomicpsection/dist', true) ~ '/img/Ekomi-icon.svg' %}
+
+{# Content that should appear in the page header#}
+{% set extraPageHeaderHtml %}
+    <div class="buttons">
+        <a href="{{ pluginCpUrl }}" class="btn submit add icon">{{ "Click Me!"|t('ekomi') }}</a>
+    </div>
+{% endset %}
+
+{# The content of the CP Section#}
+{% set content %}
+    <h2>{{ "Ekomi CP Section body goes here"|t('ekomi') }}</h2>
+    <img src="{{ iconUrl }}" height="64" width="64" />
+    <p class="textline"></p>
+{% endset %}
