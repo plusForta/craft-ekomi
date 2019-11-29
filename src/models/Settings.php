@@ -35,11 +35,21 @@ class Settings extends Model
     // =========================================================================
 
     /**
-     * Some field model attribute
-     *
-     * @var string
+     * @var int How many ratings to stored per page
      */
-    public $someAttribute = 'Some Default';
+    public $ratingsPerPage = 25;
+    /**
+     * @var int Your partner ID (set in control panel)
+     */
+    public $partnerID;
+    /**
+     * @var string the password for accessing ekomi data
+     */
+    public $ekomiSecret;
+    /**
+     * @var int How long to cache the data before updating
+     */
+    public $cacheTimeout = 3900;
 
     // Public Methods
     // =========================================================================
@@ -57,8 +67,17 @@ class Settings extends Model
     public function rules()
     {
         return [
-            ['someAttribute', 'string'],
-            ['someAttribute', 'default', 'value' => 'Some Default'],
+            ['ratingsPerPage', 'integer', 'min' => 0, 'max' => 150],
+            ['ratingsPerPage', 'default', 'value' => 25],
+            ['ratingsPerPage', 'trim'],
+            ['partnerID', 'integer', 'min' => 0, 'max' => 99999],
+            ['partnerID', 'default', 'value' => 25],
+            ['partnerID', 'trim'],
+            ['ekomiSecret', 'string'],
+            ['ekomiSecret', 'trim'],
+            ['cacheTimeout', 'integer', 'min' => 0, 'max' => 6000],
+            ['cacheTimeout', 'default', 'value' => 3900],
+            ['cacheTimeout', 'trim'],
         ];
     }
 }

@@ -18,9 +18,35 @@
 {% do view.registerAssetBundle("plusforta\\ekomi\\assetbundles\\ekomi\\EkomiAsset") %}
 
 {{ forms.textField({
-    label: 'Some Field',
-    instructions: 'Enter some setting here.',
-    id: 'someAttribute',
-    name: 'someAttribute',
-    value: settings['someAttribute']})
+    label: 'ekomi Partner ID',
+    instructions: 'Enter your supplied ekomi partner ID in this field',
+    id: 'partnerID',
+    name: 'partnerID',
+    value: settings['partnerID']})
 }}
+
+{{ forms.textField({
+    label: 'ekomi Secret',
+    instructions: 'Enter your supplied ekomi secret',
+    id: 'ekomiSecret',
+    name: 'ekomiSecret',
+    value: settings['ekomiSecret'],
+    type: 'password'})
+}}
+
+{{ forms.textField({
+    label: 'Ratings per page',
+    instructions: 'This determines how many ratings are store in each block.  Don\'t change this if you don\'t understand it.',
+    id: 'ratingsPerPage',
+    name: 'ratingsPerPage',
+    value: settings['ratingsPerPage']})
+}}
+
+{{ forms.textField({
+    label: 'Cache Timeout',
+    instructions: 'This number in seconds is how long we wait to retrieve fresh statistics',
+    id: 'cacheTimeout',
+    name: 'cacheTimeout',
+    value: settings['cacheTimeout']})
+}}
+

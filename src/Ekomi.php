@@ -110,6 +110,12 @@ class Ekomi extends Plugin
             }
         );
 
+        // Check cache timeout, if we're within 60 seconds
+        // and there isn't already a job running
+        // run the queue job
+        // or if the job has been "running" for more than 5 minutes
+        // remove the lock, and run the queue job
+
 /**
  * Logging in Craft involves using one of the following methods:
  *

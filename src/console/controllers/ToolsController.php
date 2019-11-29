@@ -15,9 +15,10 @@ use plusforta\ekomi\Ekomi;
 use Craft;
 use yii\console\Controller;
 use yii\helpers\Console;
+use plusforta\ekomi\jobs\Download as DownloadJob;
 
 /**
- * Update Command
+ * Console commands for the ekomi plugin
  *
  * The first line of this class docblock is displayed as the description
  * of the Console Command in ./craft help
@@ -41,42 +42,32 @@ use yii\helpers\Console;
  * @package   Ekomi
  * @since     1.0.0
  */
-class UpdateController extends Controller
+class ToolsController extends Controller
 {
     // Public Methods
     // =========================================================================
 
     /**
-     * Handle ekomi/update console commands
-     *
-     * The first line of this method docblock is displayed as the description
-     * of the Console Command in ./craft help
-     *
-     * @return mixed
+     * Kick off an update job manually
+     * @return string
      */
-    public function actionIndex()
+    public function actionUpdate()
     {
-        $result = 'something';
+        $queue = Craft::$app->getQueue();
+        $jobId = $queue->push(new DownloadJob([
+            'description'   => Craft::t('ekomi', 'Manually started ekomi update job'),
+        ]));
 
-        echo "Welcome to the console UpdateController actionIndex() method\n";
-
-        return $result;
+        return "Update job queued with Job ID: ${jobId}";
     }
 
     /**
-     * Handle ekomi/update/do-something console commands
-     *
-     * The first line of this method docblock is displayed as the description
-     * of the Console Command in ./craft help
-     *
-     * @return mixed
+     * Unlock a blocked update job
+     * @return string
      */
-    public function actionDoSomething()
+    public function actionUnlock()
     {
-        $result = 'something';
-
-        echo "Welcome to the console UpdateController actionDoSomething() method\n";
-
-        return $result;
+        $queue = Craft::$app->getQueue();
+        return "Job queue unlocked";
     }
 }

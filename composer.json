@@ -1,5 +1,5 @@
 {
-    "name": "plusforta/ekomi",
+    "name": "plusforta/craft-ekomi",
     "description": "Download ekomi data",
     "type": "craft-plugin",
     "version": "1.0.0",
@@ -11,8 +11,8 @@
         "ekomi"
     ],
     "support": {
-        "docs": "https://github.com/mrunkel/ekomi/blob/master/README.md",
-        "issues": "https://github.com/mrunkel/ekomi/issues"
+        "docs": "https://github.com/plusforta/craft-ekomi/blob/master/README.md",
+        "issues": "https://github/plusforta/craft-ekomi/issues"
     },
     "license": "MIT",
     "authors": [
@@ -33,7 +33,7 @@
         "name": "ekomi",
         "handle": "ekomi",
         "hasCpSettings": true,
-        "hasCpSection": true,
+        "hasCpSection": false,
         "changelogUrl": "https://raw.githubusercontent.com/mrunkel/ekomi/master/CHANGELOG.md",
         "components": {
             "data": "plusforta\\ekomi\\services\\Data"

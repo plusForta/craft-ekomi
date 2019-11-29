@@ -1,1 +1,32 @@
-{"pluginName":"ekomi","pluginDescription":"Download ekomi data","pluginVersion":"1.0.0","pluginAuthorName":"Marc Runkel","pluginVendorName":"plusforta","pluginAuthorUrl":"https://github.com/plusForta/craft-ekomi","pluginAuthorGithub":"mrunkel","codeComments":"yes","pluginComponents":["consolecommands","cpsection","models","services","settings","tasks","variables"],"consolecommandName":"update","controllerName":"","cpsectionName":"ekomi","elementName":"","fieldName":"","modelName":"ekomiData","purchasableName":"","recordName":"","serviceName":"data","taskName":"download","utilityName":"","widgetName":"","apiVersion":"api_version_3_0"}
+{
+  "pluginName": "ekomi",
+  "pluginDescription": "Download ekomi data",
+  "pluginVersion": "1.0.0",
+  "pluginAuthorName": "Marc Runkel",
+  "pluginVendorName": "plusforta",
+  "pluginAuthorUrl": "https://github.com/plusForta/craft-ekomi",
+  "pluginAuthorGithub": "mrunkel",
+  "codeComments": "yes",
+  "pluginComponents": [
+    "controllers",
+    "cpsection",
+    "models",
+    "records",
+    "services",
+    "settings",
+    "tasks",
+    "variables"
+  ],
+  "consolecommandName": "tools",
+  "cpsectionName": "ekomi",
+  "elementName": "",
+  "fieldName": "",
+  "modelName": "Data",
+  "purchasableName": "",
+  "recordName": "Data",
+  "serviceName": "data",
+  "taskName": "download",
+  "utilityName": "",
+  "widgetName": "",
+  "apiVersion": "api_version_3_0"
+}

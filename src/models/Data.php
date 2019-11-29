@@ -27,7 +27,7 @@ use craft\base\Model;
  * @package   Ekomi
  * @since     1.0.0
  */
-class EkomiData extends Model
+class Data extends Model
 {
     // Public Properties
     // =========================================================================
@@ -37,7 +37,11 @@ class EkomiData extends Model
      *
      * @var string
      */
-    public $someAttribute = 'Some Default';
+    public $reviewDate;
+    public $orderId;
+    public $score;
+    public $comment;
+    public $extra = '';
 
     // Public Methods
     // =========================================================================
@@ -55,8 +59,11 @@ class EkomiData extends Model
     public function rules()
     {
         return [
-            ['someAttribute', 'string'],
-            ['someAttribute', 'default', 'value' => 'Some Default'],
+            ['reviewDate', 'datetime'],
+            ['orderId', 'string'],
+            ['score', 'integer'],
+            ['comment', 'string'],
+            ['extra', 'string'],
         ];
     }
 }

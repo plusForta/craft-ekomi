@@ -10,6 +10,9 @@
 
 namespace plusforta\ekomi\jobs;
 
+use craft\feeds\GuzzleClient;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use plusforta\ekomi\Ekomi;
 
 use Craft;
@@ -51,11 +54,9 @@ class Download extends BaseJob
     // =========================================================================
 
     /**
-     * Some attribute
-     *
-     * @var string
+     * @var \plusforta\ekomi\models\Settings
      */
-    public $someAttribute = 'Some Default';
+    public $settings;
 
     // Public Methods
     // =========================================================================
@@ -69,7 +70,17 @@ class Download extends BaseJob
      */
     public function execute($queue)
     {
-        // Do work here
+
+        $info = $queue->getJobInfo();
+        if (Ekomi::$plugin->data->lockDB($info['id'])) {
+            if (Ekomi::$plugin->data->process(
+                Ekomi::$plugin->data->getData()
+            )) {
+                Ekomi::$plugin->data->unlockDB($info['id']);
+                return true;
+            }
+        }
+        return false;
     }
 
     // Protected Methods
@@ -84,4 +95,6 @@ class Download extends BaseJob
     {
         return Craft::t('ekomi', 'Download');
     }
+
+
 }
